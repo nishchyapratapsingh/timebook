@@ -3,69 +3,520 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productivity Tools</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bogart:wght@700&display=swap" rel="stylesheet">
+    <title>Productivity Website</title>
+    <link rel="icon" href="title_logo.png" type="image/png">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1E201E;
+            color: #ECDFCC;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #2A2B26;
+            color: #ECDFCC;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ECDFCC;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #B85042;
+        }
+
+        /* Intro Section Styles */
+#intro {
+    display: flex;
+    height: 100vh;
+    padding-top: 40px; /* Space for fixed header */
+    background-color: #3C3D37; /* Background color for the first screen */
+    position: relative;
+    overflow: hidden; /* To ensure no overflow from rotated divider */
+}
+
+.intro-content {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.intro-left {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the left */
+}
+
+.intro-left blockquote {
+    font-style: italic;
+    color: #E7E8D1;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-left: 0; /* Align quote to the left */
+}
+
+.intro-left h1 {
+    font-family: 'Bogart', serif;
+    font-size: 4rem; /* Increase the size of the text */
+    color: #ECDFCC;
+    margin: 20px 0 0;
+    line-height: 1.2; /* Adjust line height for better readability */
+}
+
+/* Divider Styles */
+
+
+/* Intro Right Styles */
+.intro-right {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #4B4C43; /* New background color for the right part */
+    padding: 20px;
+}
+
+.tools {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+}
+
+.tools h2 {
+    font-size: 2.5rem; /* Increase font size of heading */
+    color: #ECDFCC;
+    margin-bottom: 20px;
+}
+
+.tool-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.tool-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px; /* Increase width of tool items */
+    height: 60px; /* Increase height of tool items */
+    border-radius: 30px; /* Increase border radius */
+    background-color: #697565;
+    color: #ECDFCC;
+    text-decoration: none;
+    font-size: 1.5rem; /* Increase font size */
+    transition: background-color 0.3s ease;
+}
+
+.tool-item:hover {
+    background-color: #59664E;
+}
+
+
+
+
+        .circle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 80%; /* Adjust width as needed */
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #697565;
+            transition: background-color 0.3s ease;
+        }
+
+        .circle img {
+            width: 60px; /* Adjust size of icons as needed */
+            height: 60px;
+        }
+
+        .circle:hover {
+            background-color: #59664E;
+        }
+
+        /* Pomodoro Section Styles */
+        #pomodoro {
+            background-color: #3C3D37;
+            color: #ECDFCC;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .pomodoro-controls button {
+            background-color: #B85042;
+            color: #ECDFCC;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .pomodoro-controls button:hover {
+            background-color: #9A4734;
+        }
+
+        .pomodoro-timer {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        /* Calendar Section Styles */
+        #calendar {
+            background-color: #3C3D37;
+            color: #ECDFCC;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Alarm Section Styles */
+        #alarm {
+            background-color: #3C3D37;
+            color: #ECDFCC;
+            padding: 40px;
+            text-align: center;
+        }
+
+        #alarm input {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        #alarm button {
+            background-color: #B85042;
+            color: #ECDFCC;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #alarm button:hover {
+            background-color: #9A4734;
+        }
+
+        /* Todo List Section Styles */
+        #todo {
+            background-color: #3C3D37;
+            color: #ECDFCC;
+            padding: 40px;
+            text-align: center;
+        }
+
+        #todo-input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        #add-task {
+            background-color: #B85042;
+            color: #ECDFCC;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #add-task:hover {
+            background-color: #9A4734;
+        }
+
+        #todo-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        #todo-list li {
+            background-color: #697565;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div id="landing-page">
-        <div class="quote">
-            <h1>"The best way to predict the future is to invent it." – Alan Kay</h1>
+    <header>
+        <div class="logo">
+            <img src="title_logo.png" alt="Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="#pomodoro">Pomodoro Timer</a></li>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#pomodoro">Pomodoro</a></li>
                 <li><a href="#calendar">Calendar</a></li>
-                <li><a href="#alarm">Alarm Clock</a></li>
+                <li><a href="#alarm">Alarm</a></li>
+                <li><a href="#todo">Todo List</a></li>
             </ul>
         </nav>
-        <button id="enter">Enter</button>
-    </div>
+    </header>
 
-    <main id="main-content" style="display:none;">
-        <section id="pomodoro">
-            <h1>Pomodoro Timer</h1>
-            <div class="timer">
-                <span id="timer-minutes">25</span>:<span id="timer-seconds">00</span>
+    <section id="intro">
+        <div class="intro-content">
+            <div class="intro-left">
+                <blockquote>"Time is the single most valuable resource available to an individual"</blockquote>
+                <h1>Increase your productivity with Time Book</h1>
             </div>
-            <div class="controls">
+            
+            <div class="intro-right">
+                <div class="tools">
+                    <h2>Our Tools</h2>
+                    <div class="tool-list">
+                        
+                        <a href="#pomodoro" class="tool-item">Pomodoro Timer</a>
+                        <a href="#calendar" class="tool-item">Calendar</a> 
+                        <a href="#alarm" class="tool-item">Alarm Clock</a>
+                        <a href="#todo" class="tool-item">Todo List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="pomodoro">
+        <h2>Pomodoro Timer</h2>
+        <div class="pomodoro-container">
+            <div class="pomodoro-controls">
                 <button id="start">Start</button>
                 <button id="pause">Pause</button>
                 <button id="reset">Reset</button>
             </div>
-            <div class="settings">
-                <label for="work-duration">Work Duration (minutes):</label>
-                <input type="number" id="work-duration" value="25" min="1">
-                <label for="short-break">Short Break (minutes):</label>
-                <input type="number" id="short-break" value="5" min="1">
-                <label for="long-break">Long Break (minutes):</label>
-                <input type="number" id="long-break" value="15" min="1">
-                <label for="sessions-before-long-break">Sessions Before Long Break:</label>
-                <input type="number" id="sessions-before-long-break" value="4" min="1">
-            </div>
-            <div class="task-manager">
-                <h2>Tasks</h2>
-                <input type="text" id="task-input" placeholder="Add a task">
-                <button id="add-task">Add Task</button>
-                <ul id="task-list"></ul>
-            </div>
-        </section>
+            <div class="pomodoro-timer" id="timer">25:00</div>
+        </div>
+    </section>
 
-        <section id="calendar">
-            <h1>Calendar</h1>
-            <!-- Calendar will go here -->
-        </section>
+    <section id="calendar">
+        <h2>Calendar</h2>
+        <!-- Calendar content goes here -->
+    </section>
 
-        <section id="alarm">
-            <h1>Alarm Clock</h1>
-            <!-- Alarm Clock will go here -->
-        </section>
-    </main>
+    <section id="alarm">
+        <h2>Alarm Clock</h2>
+        <input type="time" id="alarm-time">
+        <button id="set-alarm">Set Alarm</button>
+    </section>
 
-    <footer>
-        <p>Productivity Tools &copy; 2024</p>
-    </footer>
+    <section id="todo">
+        <h2>Todo List</h2>
+        <input type="text" id="todo-input" placeholder="Add a new task">
+        <button id="add-task">Add Task</button>
+        <ul id="todo-list"></ul>
+    </section>
 
-    <script src="js/scripts.js"></script>
+    <script>
+      // Pomodoro Timer Variables
+let timerInterval;
+let isPaused = false;
+let currentTimer = 25 * 60; // Initial work timer set to 25 minutes
+let sessionCount = 0; // Count of completed work sessions
+let isBreakTime = false;
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(currentTimer / 60);
+    const seconds = currentTimer % 60;
+    document.getElementById('timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
+
+function startPomodoro() {
+    if (!timerInterval && !isPaused) {
+        timerInterval = setInterval(() => {
+            if (currentTimer > 0) {
+                currentTimer--;
+                updateTimerDisplay();
+            } else {
+                clearInterval(timerInterval);
+                timerInterval = null;
+
+                if (isBreakTime) {
+                    alert("Break time is over! Time to get back to work.");
+                    isBreakTime = false;
+                    startNextSession();
+                } else {
+                    sessionCount++;
+                    alert("Pomodoro session complete!");
+
+                    if (sessionCount % 4 === 0) {
+                        startLongBreak();
+                    } else {
+                        startShortBreak();
+                    }
+                }
+            }
+        }, 1000);
+    }
+}
+
+function pausePomodoro() {
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        isPaused = true;
+    }
+}
+
+function resetPomodoro() {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    isPaused = false;
+    sessionCount = 0;
+    isBreakTime = false;
+    currentTimer = 25 * 60; // Reset to 25 minutes
+    updateTimerDisplay();
+}
+
+function startNextSession() {
+    currentTimer = 25 * 60;
+    updateTimerDisplay();
+    startPomodoro();
+}
+
+function startShortBreak() {
+    isBreakTime = true;
+    currentTimer = 5 * 60; // 5-minute short break
+    updateTimerDisplay();
+    startPomodoro();
+}
+
+function startLongBreak() {
+    isBreakTime = true;
+    currentTimer = 15 * 60; // 15-minute long break
+    updateTimerDisplay();
+    startPomodoro();
+}
+
+document.getElementById('start').addEventListener('click', startPomodoro);
+document.getElementById('pause').addEventListener('click', pausePomodoro);
+document.getElementById('reset').addEventListener('click', resetPomodoro);
+
+// To-Do List Variables and Functions
+const taskInput = document.getElementById('todo-input');
+const addTaskButton = document.getElementById('add-task');
+const taskList = document.getElementById('todo-list');
+
+function addTask() {
+    const taskText = taskInput.value.trim();
+    if (taskText) {
+        const taskItem = document.createElement('li');
+        taskItem.textContent = taskText;
+
+        // Create "Mark as Done" button
+        const doneButton = document.createElement('button');
+        doneButton.textContent = 'Mark as Done';
+        doneButton.style.marginLeft = '10px';
+        doneButton.style.backgroundColor = '#4CAF50';
+        doneButton.style.color = '#ECDFCC';
+        doneButton.style.border = 'none';
+        doneButton.style.padding = '5px 10px';
+        doneButton.style.cursor = 'pointer';
+        doneButton.style.borderRadius = '5px';
+        doneButton.addEventListener('click', () => {
+            taskItem.style.textDecoration = 'line-through';
+            taskItem.style.color = '#B0B0B0';
+        });
+
+        // Create "Delete" button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.style.marginLeft = '10px';
+        deleteButton.style.backgroundColor = '#B85042';
+        deleteButton.style.color = '#ECDFCC';
+        deleteButton.style.border = 'none';
+        deleteButton.style.padding = '5px 10px';
+        deleteButton.style.cursor = 'pointer';
+        deleteButton.style.borderRadius = '5px';
+        deleteButton.addEventListener('click', () => {
+            taskList.removeChild(taskItem);
+        });
+
+        taskItem.appendChild(doneButton);
+        taskItem.appendChild(deleteButton);
+        taskList.appendChild(taskItem);
+
+        // Clear the input field after adding a task
+        taskInput.value = '';
+    }
+}
+
+addTaskButton.addEventListener('click', addTask);
+
+// Allow pressing "Enter" to add a task
+taskInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        addTask();
+    }
+});
+
+
+    </script>
 </body>
 </html>
