@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Tools</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bogart:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="landing-page">
+        <div class="quote">
+            <h1>"The best way to predict the future is to invent it." – Alan Kay</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#pomodoro">Pomodoro Timer</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#alarm">Alarm Clock</a></li>
+            </ul>
+        </nav>
+        <button id="enter">Enter</button>
+    </div>
+
+    <main id="main-content" style="display:none;">
+        <section id="pomodoro">
+            <h1>Pomodoro Timer</h1>
+            <div class="timer">
+                <span id="timer-minutes">25</span>:<span id="timer-seconds">00</span>
+            </div>
+            <div class="controls">
+                <button id="start">Start</button>
+                <button id="pause">Pause</button>
+                <button id="reset">Reset</button>
+            </div>
+            <div class="settings">
+                <label for="work-duration">Work Duration (minutes):</label>
+                <input type="number" id="work-duration" value="25" min="1">
+                <label for="short-break">Short Break (minutes):</label>
+                <input type="number" id="short-break" value="5" min="1">
+                <label for="long-break">Long Break (minutes):</label>
+                <input type="number" id="long-break" value="15" min="1">
+                <label for="sessions-before-long-break">Sessions Before Long Break:</label>
+                <input type="number" id="sessions-before-long-break" value="4" min="1">
+            </div>
+            <div class="task-manager">
+                <h2>Tasks</h2>
+                <input type="text" id="task-input" placeholder="Add a task">
+                <button id="add-task">Add Task</button>
+                <ul id="task-list"></ul>
+            </div>
+        </section>
+
+        <section id="calendar">
+            <h1>Calendar</h1>
+            <!-- Calendar will go here -->
+        </section>
+
+        <section id="alarm">
+            <h1>Alarm Clock</h1>
+            <!-- Alarm Clock will go here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Productivity Tools &copy; 2024</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
