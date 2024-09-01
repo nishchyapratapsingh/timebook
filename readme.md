@@ -15,6 +15,11 @@ TimeBook is a web application designed to help users manage their time and tasks
 - Web browser (Chrome, Firefox, Safari, etc.)
 - Internet connection
 
+### Live Demo
+You can view and interact with the live version of TimeBook hosted on Netlify:
+
+[Visit TimeBook on Netlify](https://timebooksite.netlify.app/)
+
 ### Installation
 
 1. Clone the repository:
