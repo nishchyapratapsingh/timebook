@@ -354,6 +354,7 @@
 
     <script>
     // Pomodoro Timer Variables
+// Pomodoro Timer Variables
 let timerInterval;
 let isPaused = false;
 let currentTimer = 25 * 60; // Initial work timer set to 25 minutes
@@ -362,8 +363,6 @@ let isBreakTime = false;
 const alertSound = document.getElementById('alert-sound');
 const clickSound = document.getElementById('click-sound');
 const deleteSound = document.getElementById('delete-sound');
-
-
 
 function updateTimerDisplay() {
     const minutes = Math.floor(currentTimer / 60);
@@ -374,14 +373,17 @@ function updateTimerDisplay() {
 function playAlertSound() {
     alertSound.play();
 }
+
 function playClickSound() {
     clickSound.play();
 }
+
 function playDeleteSound() {
     deleteSound.play();
 }
+
 function startPomodoro() {
-    if (!timerInterval && !isPaused) {
+    if (!timerInterval) {
         playClickSound();
         timerInterval = setInterval(() => {
             if (currentTimer > 0) {
@@ -455,6 +457,7 @@ function startLongBreak() {
 document.getElementById('start').addEventListener('click', startPomodoro);
 document.getElementById('pause').addEventListener('click', pausePomodoro);
 document.getElementById('reset').addEventListener('click', resetPomodoro);
+
 
 // To-Do List Variables and Functions
 const taskInput = document.getElementById('todo-input');

@@ -1,0 +1,279 @@
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1E201E;
+    color: #ECDFCC;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2A2B26;
+    color: #ECDFCC;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ECDFCC;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #B85042;
+}
+
+/* Intro Section Styles */
+#intro {
+    display: flex;
+    height: 100vh;
+    padding-top: 40px; /* Space for fixed header */
+    background-color: #3C3D37; /* Background color for the first screen */
+    position: relative;
+    overflow: hidden; /* To ensure no overflow from rotated divider */
+}
+
+.intro-content {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.intro-left {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the left */
+}
+
+.intro-left blockquote {
+    font-style: italic;
+    color: #E7E8D1;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-left: 0; /* Align quote to the left */
+}
+
+.intro-left h1 {
+    font-family: 'Bogart', serif;
+    font-size: 3.7rem; /* Increase the size of the text */
+    color: #ECDFCC;
+    margin: 20px 0 0;
+    line-height: 1.2; /* Adjust line height for better readability */
+}
+
+/* Intro Right Styles */
+.intro-right {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #4B4C43; /* New background color for the right part */
+    padding: 0px;
+}
+
+.tools {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+}
+
+.tools h2 {
+    font-size: 2.5rem; /* Increase font size of heading */
+    color: #ECDFCC;
+    margin-bottom: 20px;
+}
+
+.tool-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.tool-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px; /* Increase width of tool items */
+    height: 60px; /* Increase height of tool items */
+    border-radius: 30px; /* Increase border radius */
+    background-color: #697565;
+    color: #ECDFCC;
+    text-decoration: none;
+    font-size: 1.5rem; /* Increase font size */
+    transition: background-color 0.3s ease;
+}
+
+.tool-item:hover {
+    background-color: #59664E;
+}
+
+/* Pomodoro Section Styles */
+
+
+.pomodoro-controls button {
+    background-color: #B85042;
+    color: #ECDFCC;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.pomodoro-controls button:hover {
+    background-color: #9A4734;
+    transform: scale(1.1);
+}
+
+.pomodoro-timer {
+    font-size: 5rem;
+    margin-top: 20px;
+}
+
+/* Alarm Section Styles */
+/* Pomodoro Section Styles */
+#pomodoro {
+background-color: #3C3D37;
+color: #ECDFCC;
+padding: 40px;
+text-align: center;
+height: 100vh; /* Full viewport height */
+display: flex;
+flex-direction: column;
+justify-content: center; /* Center content vertically */
+margin-top: 10px;
+}
+
+/* Alarm Section Styles */
+#alarm {
+background-color: #3C3D37;
+color: #ECDFCC;
+padding: 40px;
+text-align: center;
+height: 100vh; /* Full viewport height */
+display: flex;
+flex-direction: column;
+justify-content: center; /* Center content vertically */
+margin-top: 10px; /* Add space between sections */
+}
+
+
+
+
+#alarm input {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+#alarm button {
+    background-color: #B85042;
+    color: #ECDFCC;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#alarm button:hover {
+    background-color: #9A4734;
+}
+
+/* Todo List Section Styles */
+
+
+#todo-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+#add-task {
+    background-color: #B85042;
+    color: #ECDFCC;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#add-task:hover {
+    background-color: #9A4734;
+}
+
+/* Todo List Section Styles */
+#todo {
+background-color: #3C3D37;
+color: #ECDFCC;
+padding: 40px;
+text-align: center;
+height: 100vh; /* Full viewport height */
+display: flex;
+flex-direction: column;
+justify-content: center; /* Center content vertically */
+margin-top: 10px;
+}
+
+#todo-list {
+list-style: none;
+padding: 0;
+margin-top: 20px;
+text-align: left;
+max-height: 400px; /* Set a fixed height for the list */
+overflow-y: auto; /* Enable vertical scrolling */
+}
+
+#todo-list li {
+background-color: #697565;
+margin: 5px 0;
+padding: 10px;
+border-radius: 5px;
+}
