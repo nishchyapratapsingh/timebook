@@ -10,6 +10,7 @@
     <audio id="delete-sound" src="delete-sound.mp3" preload="auto"></audio>
 
     <style>
+        /* Base Styles */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #1E201E;
@@ -20,6 +21,7 @@
             scroll-behavior: smooth;
         }
 
+        /* Header Styles */
         header {
             display: flex;
             justify-content: space-between;
@@ -64,13 +66,14 @@
             color: #B85042;
         }
 
+        /* Intro Section Styles */
         #intro {
             display: flex;
             height: 100vh;
-            padding-top: 40px;
-            background-color: #3C3D37;
+            padding-top: 40px; /* Space for fixed header */
+            background-color: #3C3D37; /* Background color for the first screen */
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* To ensure no overflow from rotated divider */
         }
 
         .intro-content {
@@ -85,7 +88,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: flex-start; /* Align content to the left */
         }
 
         .intro-left blockquote {
@@ -93,24 +96,25 @@
             color: #E7E8D1;
             font-size: 1.2rem;
             margin-top: 0;
-            margin-left: 0;
+            margin-left: 0; /* Align quote to the left */
         }
 
         .intro-left h1 {
             font-family: 'Bogart', serif;
-            font-size: 4rem;
+            font-size: 4rem; /* Increase the size of the text */
             color: #ECDFCC;
             margin: 20px 0 0;
-            line-height: 1.2;
+            line-height: 1.2; /* Adjust line height for better readability */
         }
 
+        /* Intro Right Styles */
         .intro-right {
             flex: 3;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            background-color: #4B4C43;
+            background-color: #4B4C43; /* New background color for the right part */
             padding: 0px;
         }
 
@@ -122,7 +126,7 @@
         }
 
         .tools h2 {
-            font-size: 2.5rem;
+            font-size: 2.5rem; /* Increase font size of heading */
             color: #ECDFCC;
             margin-bottom: 20px;
         }
@@ -138,19 +142,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 250px;
-            height: 60px;
-            border-radius: 30px;
+            width: 250px; /* Increase width of tool items */
+            height: 60px; /* Increase height of tool items */
+            border-radius: 30px; /* Increase border radius */
             background-color: #697565;
             color: #ECDFCC;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.5rem; /* Increase font size */
             transition: background-color 0.3s ease;
         }
 
         .tool-item:hover {
             background-color: #59664E;
         }
+
+        /* Pomodoro Section Styles */
+        
 
         .pomodoro-controls button {
             background-color: #B85042;
@@ -174,29 +181,35 @@
             margin-top: 20px;
         }
 
-        #pomodoro {
-            background-color: #3C3D37;
-            color: #ECDFCC;
-            padding: 40px;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 10px;
-        }
+        /* Alarm Section Styles */
+        /* Pomodoro Section Styles */
+#pomodoro {
+    background-color: #3C3D37;
+    color: #ECDFCC;
+    padding: 40px;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    margin-top: 10px;
+}
 
-        #alarm {
-            background-color: #3C3D37;
-            color: #ECDFCC;
-            padding: 40px;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 10px;
-        }
+/* Alarm Section Styles */
+#alarm {
+    background-color: #3C3D37;
+    color: #ECDFCC;
+    padding: 40px;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    margin-top: 10px; /* Add space between sections */
+}
+
+
+
 
         #alarm input {
             padding: 10px;
@@ -222,33 +235,8 @@
             background-color: #9A4734;
         }
 
-        #todo {
-            background-color: #3C3D37;
-            color: #ECDFCC;
-            padding: 40px;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        #todo-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-            text-align: left;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        #todo-list li {
-            background-color: #697565;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
+        /* Todo List Section Styles */
+       
 
         #todo-input {
             padding: 10px;
@@ -273,16 +261,35 @@
             background-color: #9A4734;
         }
 
-        footer {
-            background-color: #2A2B26;
-            color: #ECDFCC;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-        }
+        /* Todo List Section Styles */
+#todo {
+    background-color: #3C3D37;
+    color: #ECDFCC;
+    padding: 40px;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    margin-top: 10px;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+    max-height: 400px; /* Set a fixed height for the list */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+#todo-list li {
+    background-color: #697565;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
     </style>
 </head>
 <body>
@@ -306,6 +313,7 @@
                 <blockquote>"Time is the single most valuable resource available to an individual"</blockquote>
                 <h1>Increase your productivity with Time Book</h1>
             </div>
+            
             <div class="intro-right">
                 <div class="tools">
                     <h2>Our Tools</h2>
@@ -318,16 +326,16 @@
             </div>
         </div>
     </section>
-
+    
     <section id="pomodoro">
         <h2>Pomodoro Timer</h2>
         <div class="pomodoro-container">
             <div class="pomodoro-controls">
                 <button id="start">Start</button>
-                <button id="stop">Stop</button>
+                <button id="pause">Pause</button>
                 <button id="reset">Reset</button>
             </div>
-            <div id="timer" class="pomodoro-timer">25:00</div>
+            <div class="pomodoro-timer" id="timer">25:00</div>
         </div>
     </section>
 
@@ -341,109 +349,218 @@
         <h2>Todo List</h2>
         <input type="text" id="todo-input" placeholder="Add a new task">
         <button id="add-task">Add Task</button>
-        <ul id="todo-list">
-            <!-- Tasks will be added here -->
-        </ul>
+        <ul id="todo-list"></ul>
     </section>
 
-    <footer>
-        &copy; 2024 Nishchya Pratap Singh. All rights reserved.
-    </footer>
-
     <script>
-        // JavaScript for Pomodoro Timer
-        const timerDisplay = document.getElementById('timer');
-        const startButton = document.getElementById('start');
-        const stopButton = document.getElementById('stop');
-        const resetButton = document.getElementById('reset');
+    // Pomodoro Timer Variables
+let timerInterval;
+let isPaused = false;
+let currentTimer = 25 * 60; // Initial work timer set to 25 minutes
+let sessionCount = 0; // Count of completed work sessions
+let isBreakTime = false;
+const alertSound = document.getElementById('alert-sound');
+const clickSound = document.getElementById('click-sound');
+const deleteSound = document.getElementById('delete-sound');
 
-        let timer;
-        let timeLeft = 25 * 60; // 25 minutes
 
-        function formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-        }
 
-        function startTimer() {
-            timer = setInterval(() => {
-                timeLeft--;
-                timerDisplay.textContent = formatTime(timeLeft);
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    document.getElementById('alert-sound').play();
-                    timeLeft = 25 * 60; // reset to 25 minutes
+function updateTimerDisplay() {
+    const minutes = Math.floor(currentTimer / 60);
+    const seconds = currentTimer % 60;
+    document.getElementById('timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
+
+function playAlertSound() {
+    alertSound.play();
+}
+function playClickSound() {
+    clickSound.play();
+}
+function playDeleteSound() {
+    deleteSound.play();
+}
+function startPomodoro() {
+    if (!timerInterval && !isPaused) {
+        playClickSound();
+        timerInterval = setInterval(() => {
+            if (currentTimer > 0) {
+                currentTimer--;
+                updateTimerDisplay();
+            } else {
+                clearInterval(timerInterval);
+                timerInterval = null;
+
+                if (isBreakTime) {
+                    playAlertSound();
+                    alert("Break time is over! Time to get back to work.");
+                    isBreakTime = false;
+                    startNextSession();
+                } else {
+                    sessionCount++;
+                    playAlertSound();
+                    alert("Pomodoro session complete!");
+
+                    if (sessionCount % 4 === 0) {
+                        startLongBreak();
+                    } else {
+                        startShortBreak();
+                    }
                 }
-            }, 1000);
-        }
-
-        function stopTimer() {
-            clearInterval(timer);
-        }
-
-        function resetTimer() {
-            clearInterval(timer);
-            timeLeft = 25 * 60;
-            timerDisplay.textContent = formatTime(timeLeft);
-        }
-
-        startButton.addEventListener('click', startTimer);
-        stopButton.addEventListener('click', stopTimer);
-        resetButton.addEventListener('click', resetTimer);
-
-        // JavaScript for Alarm Clock
-        const alarmTimeInput = document.getElementById('alarm-time');
-        const setAlarmButton = document.getElementById('set-alarm');
-
-        function setAlarm() {
-            const alarmTime = alarmTimeInput.value;
-            const now = new Date();
-            const [hours, minutes] = alarmTime.split(':').map(Number);
-            const alarmDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
-
-            if (alarmDate < now) {
-                alarmDate.setDate(alarmDate.getDate() + 1);
             }
+        }, 1000);
+    }
+}
 
-            const timeToAlarm = alarmDate.getTime() - now.getTime();
-            setTimeout(() => {
-                document.getElementById('alert-sound').play();
-            }, timeToAlarm);
-        }
+function pausePomodoro() {
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        isPaused = true;
+        playClickSound();
+    }
+}
 
-        setAlarmButton.addEventListener('click', setAlarm);
+function resetPomodoro() {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    isPaused = false;
+    sessionCount = 0;
+    isBreakTime = false;
+    currentTimer = 25 * 60; // Reset to 25 minutes
+    updateTimerDisplay();
+    playClickSound();
+}
 
-        // JavaScript for Todo List
-        const todoInput = document.getElementById('todo-input');
-        const addTaskButton = document.getElementById('add-task');
-        const todoList = document.getElementById('todo-list');
+function startNextSession() {
+    currentTimer = 25 * 60;
+    updateTimerDisplay();
+    startPomodoro();
+}
 
-        function addTask() {
-            const taskText = todoInput.value.trim();
-            if (taskText === '') return;
+function startShortBreak() {
+    isBreakTime = true;
+    currentTimer = 5 * 60; // 5-minute short break
+    updateTimerDisplay();
+    startPomodoro();
+}
 
-            const li = document.createElement('li');
-            li.textContent = taskText;
+function startLongBreak() {
+    isBreakTime = true;
+    currentTimer = 15 * 60; // 15-minute long break
+    updateTimerDisplay();
+    startPomodoro();
+}
 
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete';
-            deleteButton.addEventListener('click', () => {
-                li.remove();
-                document.getElementById('delete-sound').play();
-            });
+document.getElementById('start').addEventListener('click', startPomodoro);
+document.getElementById('pause').addEventListener('click', pausePomodoro);
+document.getElementById('reset').addEventListener('click', resetPomodoro);
 
-            li.appendChild(deleteButton);
-            todoList.appendChild(li);
+// To-Do List Variables and Functions
+const taskInput = document.getElementById('todo-input');
+const addTaskButton = document.getElementById('add-task');
+const taskList = document.getElementById('todo-list');
 
-            todoInput.value = '';
-            document.getElementById('click-sound').play();
-        }
+function addTask() {
+    const taskText = taskInput.value.trim();
+    if (taskText) {
+        const taskItem = document.createElement('li');
+        taskItem.textContent = taskText;
 
-        addTaskButton.addEventListener('click', addTask);
-        todoInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') addTask();
+        // Create "Mark as Done" button
+        const doneButton = document.createElement('button');
+        doneButton.textContent = 'Mark as Done';
+        doneButton.style.marginLeft = '10px';
+        doneButton.style.backgroundColor = '#4CAF50';
+        doneButton.style.color = '#ECDFCC';
+        doneButton.style.border = 'none';
+        doneButton.style.padding = '5px 10px';
+        doneButton.style.cursor = 'pointer';
+        doneButton.style.borderRadius = '5px';
+        doneButton.addEventListener('click', () => {
+            playClickSound();
+            taskItem.style.textDecoration = 'line-through';
+            taskItem.style.color = '#B0B0B0';
         });
+
+        // Create "Delete" button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.style.marginLeft = '10px';
+        deleteButton.style.backgroundColor = '#B85042';
+        deleteButton.style.color = '#ECDFCC';
+        deleteButton.style.border = 'none';
+        deleteButton.style.padding = '5px 10px';
+        deleteButton.style.cursor = 'pointer';
+        deleteButton.style.borderRadius = '5px';
+        deleteButton.addEventListener('click', () => {
+            playDeleteSound();
+            taskList.removeChild(taskItem);
+        });
+
+        taskItem.appendChild(doneButton);
+        taskItem.appendChild(deleteButton);
+        taskList.appendChild(taskItem);
+
+        // Clear the input field after adding a task
+        taskInput.value = '';
+        playClickSound();
+    }
+}
+
+addTaskButton.addEventListener('click', addTask);
+
+// Allow pressing "Enter" to add a task
+taskInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        addTask();
+    }
+});
+
+// Alarm Variables and Functions
+let alarmTime = null;
+let alarmTimeout = null;
+
+function setAlarm() {
+    const alarmInput = document.getElementById('alarm-time').value;
+
+    if (alarmInput) {
+        const now = new Date();
+        const [hours, minutes] = alarmInput.split(':').map(Number);
+
+        // Set alarm time today
+        alarmTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes, 0);
+
+        // If alarm time has already passed today, set for the next day
+        if (alarmTime < now) {
+            alarmTime.setDate(alarmTime.getDate() + 1);
+        }
+
+        // Clear any existing timeout
+        if (alarmTimeout) {
+            clearTimeout(alarmTimeout);
+        }
+
+        // Calculate the time until the alarm goes off
+        const timeUntilAlarm = alarmTime - now;
+
+        // Set a timeout to show the alert when the alarm goes off
+        alarmTimeout = setTimeout(() => {
+            playAlertSound();
+            setTimeout(() => {
+                alert("Alarm ringing!");
+            }, 100); // Delay alert to ensure sound plays first
+        }, timeUntilAlarm);
+
+        alert("Alarm set successfully!");
+    } else {
+        alert("Please select a time.");
+    }
+}
+
+document.getElementById('set-alarm').addEventListener('click', setAlarm);
+
+
     </script>
 </body>
 </html>
