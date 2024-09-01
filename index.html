@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productivity Website</title>
     <link rel="icon" href="title_logo.png" type="image/png">
+    <audio id="alert-sound" src="alert-sound.mp3" preload="auto"></audio>
+    <audio id="click-sound" src="click-sound.mp3" preload="auto"></audio>
+    <audio id="delete-sound" src="delete-sound.mp3" preload="auto"></audio>
+
     <style>
         /* Base Styles */
         body {
@@ -344,12 +348,17 @@
     </section>
 
     <script>
-      // Pomodoro Timer Variables
+    // Pomodoro Timer Variables
 let timerInterval;
 let isPaused = false;
 let currentTimer = 25 * 60; // Initial work timer set to 25 minutes
 let sessionCount = 0; // Count of completed work sessions
 let isBreakTime = false;
+const alertSound = document.getElementById('alert-sound');
+const clickSound = document.getElementById('click-sound');
+const deleteSound = document.getElementById('delete-sound');
+
+
 
 function updateTimerDisplay() {
     const minutes = Math.floor(currentTimer / 60);
@@ -357,8 +366,18 @@ function updateTimerDisplay() {
     document.getElementById('timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
+function playAlertSound() {
+    alertSound.play();
+}
+function playClickSound() {
+    clickSound.play();
+}
+function playDeleteSound() {
+    deleteSound.play();
+}
 function startPomodoro() {
     if (!timerInterval && !isPaused) {
+        playClickSound();
         timerInterval = setInterval(() => {
             if (currentTimer > 0) {
                 currentTimer--;
@@ -368,11 +387,13 @@ function startPomodoro() {
                 timerInterval = null;
 
                 if (isBreakTime) {
+                    playAlertSound();
                     alert("Break time is over! Time to get back to work.");
                     isBreakTime = false;
                     startNextSession();
                 } else {
                     sessionCount++;
+                    playAlertSound();
                     alert("Pomodoro session complete!");
 
                     if (sessionCount % 4 === 0) {
@@ -391,6 +412,7 @@ function pausePomodoro() {
         clearInterval(timerInterval);
         timerInterval = null;
         isPaused = true;
+        playClickSound();
     }
 }
 
@@ -402,6 +424,7 @@ function resetPomodoro() {
     isBreakTime = false;
     currentTimer = 25 * 60; // Reset to 25 minutes
     updateTimerDisplay();
+    playClickSound();
 }
 
 function startNextSession() {
@@ -450,6 +473,7 @@ function addTask() {
         doneButton.style.cursor = 'pointer';
         doneButton.style.borderRadius = '5px';
         doneButton.addEventListener('click', () => {
+            playClickSound();
             taskItem.style.textDecoration = 'line-through';
             taskItem.style.color = '#B0B0B0';
         });
@@ -465,6 +489,7 @@ function addTask() {
         deleteButton.style.cursor = 'pointer';
         deleteButton.style.borderRadius = '5px';
         deleteButton.addEventListener('click', () => {
+            playDeleteSound();
             taskList.removeChild(taskItem);
         });
 
@@ -474,6 +499,7 @@ function addTask() {
 
         // Clear the input field after adding a task
         taskInput.value = '';
+        playClickSound();
     }
 }
 
@@ -485,6 +511,51 @@ taskInput.addEventListener('keypress', (e) => {
         addTask();
     }
 });
+
+// Alarm Variables and Functions
+let alarmTime = null;
+let alarmTimeout = null;
+
+function setAlarm() {
+    const alarmInput = document.getElementById('alarm-time').value;
+
+    if (alarmInput) {
+        const now = new Date();
+        const [hours, minutes] = alarmInput.split(':').map(Number);
+
+        // Set alarm time today
+        alarmTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes, 0);
+
+        // If alarm time has already passed today, set for the next day
+        if (alarmTime < now) {
+            alarmTime.setDate(alarmTime.getDate() + 1);
+        }
+
+        // Clear any existing timeout
+        if (alarmTimeout) {
+            clearTimeout(alarmTimeout);
+        }
+
+        // Calculate the time until the alarm goes off
+        const timeUntilAlarm = alarmTime - now;
+
+        // Set a timeout to show the alert when the alarm goes off
+        alarmTimeout = setTimeout(() => {
+            playAlertSound();
+            setTimeout(() => {
+                alert("Alarm ringing!");
+            }, 100); // Delay alert to ensure sound plays first
+        }, timeUntilAlarm);
+
+        alert("Alarm set successfully!");
+    } else {
+        alert("Please select a time.");
+    }
+}
+
+document.getElementById('set-alarm').addEventListener('click', setAlarm);
+
+
     </script>
 </body>
 </html>
