@@ -60,6 +60,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgements
 
-- Designed and developed by Nishchya Pratap Singh.
+Designed and developed by Nishchya Pratap Singh.
 
 ---
