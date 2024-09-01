@@ -63,138 +63,97 @@
         }
 
         /* Intro Section Styles */
-#intro {
-    display: flex;
-    height: 100vh;
-    padding-top: 40px; /* Space for fixed header */
-    background-color: #3C3D37; /* Background color for the first screen */
-    position: relative;
-    overflow: hidden; /* To ensure no overflow from rotated divider */
-}
-
-.intro-content {
-    display: flex;
-    width: 100%;
-    position: relative;
-}
-
-.intro-left {
-    flex: 2;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; /* Align content to the left */
-}
-
-.intro-left blockquote {
-    font-style: italic;
-    color: #E7E8D1;
-    font-size: 1.2rem;
-    margin-top: 0;
-    margin-left: 0; /* Align quote to the left */
-}
-
-.intro-left h1 {
-    font-family: 'Bogart', serif;
-    font-size: 4rem; /* Increase the size of the text */
-    color: #ECDFCC;
-    margin: 20px 0 0;
-    line-height: 1.2; /* Adjust line height for better readability */
-}
-
-/* Divider Styles */
-
-
-/* Intro Right Styles */
-.intro-right {
-    flex: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: #4B4C43; /* New background color for the right part */
-    padding: 20px;
-}
-
-.tools {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    text-align: center;
-}
-
-.tools h2 {
-    font-size: 2.5rem; /* Increase font size of heading */
-    color: #ECDFCC;
-    margin-bottom: 20px;
-}
-
-.tool-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.tool-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 250px; /* Increase width of tool items */
-    height: 60px; /* Increase height of tool items */
-    border-radius: 30px; /* Increase border radius */
-    background-color: #697565;
-    color: #ECDFCC;
-    text-decoration: none;
-    font-size: 1.5rem; /* Increase font size */
-    transition: background-color 0.3s ease;
-}
-
-.tool-item:hover {
-    background-color: #59664E;
-}
-
-
-
-
-        .circle-container {
+        #intro {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            width: 80%; /* Adjust width as needed */
+            height: 100vh;
+            padding-top: 40px; /* Space for fixed header */
+            background-color: #3C3D37; /* Background color for the first screen */
+            position: relative;
+            overflow: hidden; /* To ensure no overflow from rotated divider */
         }
 
-        .circle {
-            width: 120px;
-            height: 120px;
+        .intro-content {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .intro-left {
+            flex: 2;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Align content to the left */
+        }
+
+        .intro-left blockquote {
+            font-style: italic;
+            color: #E7E8D1;
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-left: 0; /* Align quote to the left */
+        }
+
+        .intro-left h1 {
+            font-family: 'Bogart', serif;
+            font-size: 4rem; /* Increase the size of the text */
+            color: #ECDFCC;
+            margin: 20px 0 0;
+            line-height: 1.2; /* Adjust line height for better readability */
+        }
+
+        /* Intro Right Styles */
+        .intro-right {
+            flex: 3;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 50%;
-            overflow: hidden;
+            position: relative;
+            background-color: #4B4C43; /* New background color for the right part */
+            padding: 0px;
+        }
+
+        .tools {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tools h2 {
+            font-size: 2.5rem; /* Increase font size of heading */
+            color: #ECDFCC;
+            margin-bottom: 20px;
+        }
+
+        .tool-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .tool-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 250px; /* Increase width of tool items */
+            height: 60px; /* Increase height of tool items */
+            border-radius: 30px; /* Increase border radius */
             background-color: #697565;
+            color: #ECDFCC;
+            text-decoration: none;
+            font-size: 1.5rem; /* Increase font size */
             transition: background-color 0.3s ease;
         }
 
-        .circle img {
-            width: 60px; /* Adjust size of icons as needed */
-            height: 60px;
-        }
-
-        .circle:hover {
+        .tool-item:hover {
             background-color: #59664E;
         }
 
         /* Pomodoro Section Styles */
-        #pomodoro {
-            background-color: #3C3D37;
-            color: #ECDFCC;
-            padding: 40px;
-            text-align: center;
-        }
+        
 
         .pomodoro-controls button {
             background-color: #B85042;
@@ -210,28 +169,54 @@
 
         .pomodoro-controls button:hover {
             background-color: #9A4734;
+            transform: scale(1.1);
         }
 
         .pomodoro-timer {
-            font-size: 3rem;
+            font-size: 5rem;
             margin-top: 20px;
         }
 
-        /* Calendar Section Styles */
-        #calendar {
-            background-color: #3C3D37;
-            color: #ECDFCC;
-            padding: 40px;
-            text-align: center;
-        }
-
         /* Alarm Section Styles */
-        #alarm {
-            background-color: #3C3D37;
-            color: #ECDFCC;
-            padding: 40px;
-            text-align: center;
-        }
+        /* Pomodoro Section Styles */
+#pomodoro {
+    background-color: #3C3D37;
+    color: #ECDFCC;
+    padding: 40px;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    margin-top: 10px;
+}
+
+/* Alarm Section Styles */
+#alarm {
+    background-color: #3C3D37;
+    color: #ECDFCC;
+    padding: 40px;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    margin-top: 10px; /* Add space between sections */
+}
+
+/* Todo List Section Styles */
+#todo {
+    background-color: #3C3D37;
+    color: #ECDFCC;
+    padding: 40px;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    margin-top: 10px;
+}
+
 
         #alarm input {
             padding: 10px;
@@ -258,12 +243,7 @@
         }
 
         /* Todo List Section Styles */
-        #todo {
-            background-color: #3C3D37;
-            color: #ECDFCC;
-            padding: 40px;
-            text-align: center;
-        }
+       
 
         #todo-input {
             padding: 10px;
@@ -312,7 +292,6 @@
             <ul>
                 <li><a href="#intro">Home</a></li>
                 <li><a href="#pomodoro">Pomodoro</a></li>
-                <li><a href="#calendar">Calendar</a></li>
                 <li><a href="#alarm">Alarm</a></li>
                 <li><a href="#todo">Todo List</a></li>
             </ul>
@@ -330,9 +309,7 @@
                 <div class="tools">
                     <h2>Our Tools</h2>
                     <div class="tool-list">
-                        
                         <a href="#pomodoro" class="tool-item">Pomodoro Timer</a>
-                        <a href="#calendar" class="tool-item">Calendar</a> 
                         <a href="#alarm" class="tool-item">Alarm Clock</a>
                         <a href="#todo" class="tool-item">Todo List</a>
                     </div>
@@ -341,8 +318,6 @@
         </div>
     </section>
     
-    
-
     <section id="pomodoro">
         <h2>Pomodoro Timer</h2>
         <div class="pomodoro-container">
@@ -353,11 +328,6 @@
             </div>
             <div class="pomodoro-timer" id="timer">25:00</div>
         </div>
-    </section>
-
-    <section id="calendar">
-        <h2>Calendar</h2>
-        <!-- Calendar content goes here -->
     </section>
 
     <section id="alarm">
@@ -515,8 +485,6 @@ taskInput.addEventListener('keypress', (e) => {
         addTask();
     }
 });
-
-
     </script>
 </body>
 </html>
