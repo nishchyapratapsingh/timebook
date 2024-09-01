@@ -9,7 +9,9 @@ body {
     line-height: 1.6;
     scroll-behavior: smooth;
 }
-
+* {
+    box-sizing: border-box;
+}
 /* Header Styles */
 header {
     display: flex;
@@ -20,7 +22,7 @@ header {
     color: #ECDFCC;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     position: fixed;
-    width: 100%;
+    width: 100vw;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -34,7 +36,7 @@ footer {
     font-size: 14px; /* Font size */
     
     bottom: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 
@@ -78,7 +80,7 @@ nav ul li a:hover {
 
 .intro-content {
     display: flex;
-    width: 100%;
+    width: 100vw;
     position: relative;
 }
 
@@ -101,7 +103,7 @@ nav ul li a:hover {
 
 .intro-left h1 {
     font-family: 'Bogart', serif;
-    font-size: 3.7rem; /* Increase the size of the text */
+    font-size: 3.8rem; 
     color: #ECDFCC;
     margin: 20px 0 0;
     line-height: 1.2; /* Adjust line height for better readability */
